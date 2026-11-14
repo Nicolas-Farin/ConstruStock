@@ -1,0 +1,518 @@
+/* ======================================================
+   CONTAINER E CABEÇALHO
+====================================================== */
+.container {
+    padding: 24px 32px;
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    color: #334155;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.titleArea {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.iconWrapper {
+    background-color: #f1f5f9;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+}
+
+.title {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.stats {
+    background-color: #f8fafc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+/* ======================================================
+   ESTADOS VAZIOS
+====================================================== */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    border: 2px dashed #cbd5e1;
+    text-align: center;
+    color: #64748b;
+}
+
+.emptyIcon {
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.emptyState h3 {
+    margin: 0 0 8px 0;
+    color: #334155;
+}
+
+/* ======================================================
+   CARDS DE NOTIFICAÇÃO
+====================================================== */
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    overflow: hidden;
+    align-items: flex-start;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardSelected {
+    border-color: #3b82f6 !important;
+    background-color: #f8fafc;
+}
+
+.unread {
+    border-left: 4px solid #3b82f6;
+}
+
+.read {
+    border-left: 4px solid transparent;
+}
+
+.cardContent {
+    flex: 1;
+    padding: 20px 20px 20px 0;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.notifTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.badgeNew {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.notifDesc {
+    margin: 0 0 16px 0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 0.85rem;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #94a3b8;
+}
+
+.linkAction {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.linkAction:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* ======================================================
+   AÇÕES DO CARD E CHECKBOXES
+====================================================== */
+.cardActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.deleteBtn:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
+}
+
+.checkboxWrapper {
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Checkbox Customizado */
+.customCheckbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin: 0;
+}
+
+.customCheckbox:hover {
+    border-color: #3b82f6;
+}
+
+.customCheckbox:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.customCheckbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    /* O translate centraliza perfeitamente o elemento pelo seu próprio eixo */
+    transform: translate(-50%, -55%) rotate(45deg);
+}
+
+/* =========================================
+   Controles do Header
+========================================= */
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.selectionControls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.selectAllBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Impede a quebra de linha que estava na imagem */
+}
+
+.bulkDeleteBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bulkDeleteBtn:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* ======================================================
+   GRUPOS DE DATAS
+====================================================== */
+.groupContainer {
+    margin-bottom: 32px;
+}
+
+.groupHeader {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.groupList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================================
+   Modal de Confirmação
+========================================= */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modalContent {
+    background-color: #1e293b;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #334155;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modalTitle {
+    color: #f8fafc;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.modalText {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btnCancel,
+.btnConfirm {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btnCancel {
+    background-color: transparent;
+    color: #94a3b8;
+}
+
+.btnCancel:hover {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+.btnConfirm {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.btnConfirm:hover {
+    background-color: #dc2626;
+}
+
+/* ======================================================
+   TEMA ESCURO (DARK MODE)
+====================================================== */
+.darkTheme {
+    color: #cbd5e1;
+    background-color: #0f172a;
+    min-height: calc(100vh - 70px);
+}
+
+.darkTheme .header {
+    border-bottom-color: #1e293b;
+}
+
+.darkTheme .title {
+    color: #f8fafc !important;
+}
+
+.darkTheme .subtitle {
+    color: #94a3b8 !important;
+}
+
+.darkTheme .iconWrapper {
+    background-color: #1e293b;
+    color: #cbd5e1;
+}
+
+.darkTheme .stats {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+.darkTheme .selectAllBtn {
+    color: #cbd5e1;
+}
+
+.darkTheme .customCheckbox {
+    border-color: #475569;
+}
+
+.darkTheme .card {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+.darkTheme .card:hover {
+    border-color: #475569 !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.darkTheme .cardSelected {
+    background-color: rgba(59, 130, 246, 0.05) !important;
+    border-color: #3b82f6 !important;
+}
+
+.darkTheme .unread {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    border-left-color: #3b82f6 !important;
+}
+
+.darkTheme .notifTitle {
+    color: #f8fafc !important;
+}
+
+.darkTheme .notifDesc {
+    color: #94a3b8 !important;
+}
+
+.darkTheme .metaItem,
+.darkTheme .linkAction {
+    color: #64748b !important;
+}
+
+.darkTheme .linkAction:hover {
+    color: #60a5fa !important;
+}
+
+.darkTheme .deleteBtn {
+    color: #475569;
+}
+
+.darkTheme .deleteBtn:hover {
+    color: #f87171;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.darkTheme .emptyState {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+.darkTheme .emptyState h3 {
+    color: #cbd5e1 !important;
+}
+
+.darkTheme .groupHeader {
+    color: #e2e8f0 !important;
+    border-bottom-color: #1e293b !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

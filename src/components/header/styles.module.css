@@ -1,0 +1,196 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #1a365d;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  overflow: hidden;
+}
+
+.collapsed {
+  width: 80px;
+  padding: 20px 10px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 5px;
+  margin-bottom: 30px;
+}
+
+.collapsed .logoContainer {
+  justify-content: center;
+}
+
+.logoIcon {
+  background-color: #ff6b00;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.nav {
+  flex: 1;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #b0c4de;
+  text-decoration: none;
+  position: relative;
+}
+
+.collapsed .menuItem {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.menuItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff6b00 !important;
+  font-weight: 600;
+}
+
+.icon {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.collapsed .icon {
+  margin-right: 0;
+}
+
+.linkText {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.collapsed .linkText {
+  display: none;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff6b00;
+  border-radius: 50%;
+  position: absolute;
+  right: 15px;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  color: #b0c4de;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  justify-content: center;
+  /* margin-left: 120px; */
+
+  transition: all ease-in 0.5s;
+}
+
+.collapseBtn:hover {
+  color: #fff;
+}
+
+.collapsed .collapseBtn {
+  justify-content: center;
+}
+
+
+/* ======================================================
+    DARK MODE
+====================================================== */
+
+/* Altera o fundo azul royal da barra para um grafite profundo/asfalto */
+.darkTheme.sidebar {
+  background-color: #141e35;
+  border-right: 1px solid #1e293b;
+}
+
+/* Ajuste sutil do texto estático da marca */
+.darkTheme .logoText {
+  color: #f8fafc;
+}
+
+/* Modificação dos itens não-ativos do menu lateral */
+.darkTheme .menuItem {
+  color: #94a3b8;
+}
+
+.darkTheme .menuItem:hover {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Ajuste de luminosidade do laranja ativo no tema escuro para garantir acessibilidade */
+.darkTheme .active {
+  background-color: rgba(255, 107, 0, 0.12);
+  color: #ff7a1a !important;
+}
+
+/* Ponto de notificação e ícones do rodapé */
+.darkTheme .dot {
+  background-color: #ff7a1a;
+}
+
+.darkTheme .footer {
+  border-top-color: #1e293b;
+}
+
+.darkTheme .collapseBtn {
+  color: #94a3b8;
+}
+
+.darkTheme .collapseBtn:hover {
+  color: #f1f5f9;
+}

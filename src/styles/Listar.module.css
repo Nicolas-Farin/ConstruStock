@@ -1,0 +1,623 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ecf2f7;
+  color: #1e293b;
+  font-family: sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content {
+  padding: 24px 30px 12px 30px;
+  width: 100%;
+}
+
+/* Alinha o Título e o Botão de Cadastrar na mesma linha */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.btnCadastrarMaterial {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  /* background-color: #f97316; */
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.btnCadastrarMaterial:hover {
+  background: #0284c7;
+  /* transform: translateY(-2px); */
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.btnCadastrar {
+  /* background-color: #223564; */
+  background-color: #f97316;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btnCadastrar:hover {
+  background-color: #1a294d;
+}
+
+/* CARD DE ITENS */
+.itemCard {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemInfo strong {
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.itemMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.cardIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #3b82f6;
+  overflow: hidden;
+  /* Adicione isso para garantir que a imagem não vaze das bordas arredondadas */
+}
+
+/* NOVA CLASSE PARA A IMAGEM */
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Garante que a imagem não fique distorcida */
+}
+
+.price {
+  color: #059669;
+  /* Verde para o preço */
+  font-weight: 600;
+}
+
+.qty {
+  color: #64748b;
+}
+
+/* BOTÕES DE AÇÃO AGRUPADOS */
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Espaço uniforme entre os botões */
+}
+
+.btnVerDetalhes,
+.btnEditar {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Estilo Discreto para Ver Detalhes */
+.btnVerDetalhes {
+  color: #475569;
+  background-color: #f1f5f9;
+}
+
+.btnVerDetalhes:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Estilo de Destaque para Editar */
+.btnEditar {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.btnEditar:hover {
+  background-color: #dbeafe;
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtersBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.searchInput {
+  padding: 10px 14px 10px 34px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #0f172a;
+  outline: none;
+  min-width: 260px;
+  transition: 0.2s;
+}
+
+.searchInput:focus {
+  border-color: #3b82f6;
+}
+
+.filterBtn {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: 0.2s;
+}
+
+.filterBtn:hover {
+  background: #f1f5f9;
+}
+
+.filterBtnActive {
+  border-color: #ef4444;
+  color: #ef4444;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.15),
+    0 2px 6px rgba(239, 68, 68, 0.08);
+}
+
+.clearBtn {
+  border: 1px solid #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #ef4444;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: 0.2s;
+}
+
+.clearBtn:hover {
+  background: rgba(239, 68, 68, 0.14);
+}
+
+/* ========================================
+   TOGGLE VIEW
+======================================== */
+
+.viewToggleBtn {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: 0.2s;
+}
+
+.Topo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.viewToggleBtn:hover {
+  background: #f1f5f9;
+}
+
+/* ========================================
+   GRID MODE
+======================================== */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.productGridCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  transition: 0.2s;
+}
+
+.productGridCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #3b82f6;
+}
+
+.lowStockBadge {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.gridCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.gridCardContent h3 {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.gridSku {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.gridPrice {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.gridInfoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 0.92rem;
+}
+
+.gridInfoRow span {
+  color: #64748b;
+}
+
+.gridInfoRow strong {
+  color: #0f172a;
+}
+
+.gridLocation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.gridActions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* ========================================
+   SEÇÕES E PAGINAÇÃO (NOVOS ESTILOS)
+======================================== */
+
+.sectionContainer {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  color: #0f172a;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pageBtn:hover {
+  background: #f1f5f9;
+}
+
+.pageBtnActive {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Dark mode suporte para Seções e Paginação */
+:global(.dark-mode) .sectionTitle {
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+:global(.dark-mode) .pageBtn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+:global(.dark-mode) .pageBtn:hover {
+  background: #334155;
+}
+
+:global(.dark-mode) .pageBtnActive {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* =========================
+DARK MODE
+========================= */
+
+:global(.dark-mode) .viewToggleBtn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+:global(.dark-mode) .viewToggleBtn:hover {
+  background: #334155;
+}
+
+:global(.dark-mode) .productGridCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.dark-mode) .gridCardContent h3 {
+  color: #f8fafc;
+}
+
+:global(.dark-mode) .gridSku,
+:global(.dark-mode) .gridLocation,
+:global(.dark-mode) .gridInfoRow span {
+  color: #94a3b8;
+}
+
+:global(.dark-mode) .gridInfoRow strong {
+  color: #f8fafc;
+}
+
+:global(.dark-mode) .cardIcon {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+:global(.dark-mode) .searchInput {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+:global(.dark-mode) .searchInput::placeholder {
+  color: #94a3b8;
+}
+
+:global(.dark-mode) .searchIcon {
+  color: #94a3b8;
+}
+
+:global(.dark-mode) .filterBtn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* :global(.dark-mode) .filterBtn:hover {
+  background: #334155;
+} */
+
+:global(.dark-mode) .filterBtnActive {
+  color: #000000;
+
+  background: rgb(255, 255, 255);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+:global(.dark-mode) .container {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+:global(.dark-mode) .title {
+  color: #ffffff;
+}
+
+:global(.dark-mode) .btnCadastrar {
+  /* background-color: #3b82f6; */
+  background-color: #f97316;
+}
+
+:global(.dark-mode) .btnCadastrar:hover {
+  /* background-color: #2563eb; */
+  background-color: #cd5906;
+}
+
+:global(.dark-mode) .itemCard {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+:global(.dark-mode) .itemInfo strong {
+  color: #f8fafc;
+}
+
+:global(.dark-mode) .price {
+  color: #34d399;
+}
+
+:global(.dark-mode) .qty {
+  color: #94a3b8;
+}
+
+:global(.dark-mode) .btnVerDetalhes {
+  color: #cbd5e1;
+  background-color: #334155;
+}
+
+:global(.dark-mode) .btnVerDetalhes:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+:global(.dark-mode) .btnEditar {
+  color: #60a5fa;
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+:global(.dark-mode) .btnEditar:hover {
+  background-color: rgba(59, 130, 246, 0.25);
+}
+
+:global(.dark-mode) .clearBtn {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+:global(.dark-mode) .clearBtn:hover {
+  background: rgba(239, 68, 68, 0.18);
+}

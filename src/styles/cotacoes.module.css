@@ -1,0 +1,1156 @@
+/* ======================================================
+   BASE E ESTRUTURA
+====================================================== */
+.container {
+  padding: 24px 30px;
+  background-color: #f8fafc;
+  /* Fundo ligeiramente mais limpo */
+  min-height: 90vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  gap: 20px;
+}
+
+.headerTitle h1 {
+  font-size: 26px;
+  color: #0f172a;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+
+.headerTitle p {
+  color: #64748b;
+  margin: 0;
+  font-size: 15px;
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+.btnSecundario {
+  background-color: white;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btnSecundario:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.btnPrimario {
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(255, 107, 0, 0.2);
+}
+
+.btnPrimario:hover {
+  background-color: #e05e00;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MODAL DE CONFIRMAÇÃO PERSONALIZADO
+========================================= */
+.modalOverlayConfirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContentConfirm {
+  background-color: #1e212b;
+  /* Fundo escuro igual da print */
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 450px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContentConfirm h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.modalContentConfirm p {
+  color: #b0b3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modalActionsConfirm {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btnCancelConfirm {
+  background-color: transparent;
+  color: #b0b3b8;
+  border: 1px solid #4a4d55;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btnCancelConfirm:hover {
+  background-color: #2a2d35;
+  color: #fff;
+}
+
+.btnDeleteConfirm {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btnDeleteConfirm:hover {
+  background-color: #c0392b;
+}
+
+.btnApproveConfirm {
+  background-color: #27ae60;
+  /* Verde para aprovação */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btnApproveConfirm:hover {
+  background-color: #219150;
+}
+
+/* ======================================================
+   CARDS (CUSTO-BENEFÍCIO)
+====================================================== */
+.comparativoSection {
+  margin-bottom: 40px;
+}
+
+.comparativoSection h2 {
+  font-size: 20px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.iconDestaque {
+  color: #03b0ef;
+}
+
+.cardsGrid {
+  display: grid;
+  /* Cria sempre 3 colunas, garantindo o tamanho igual independentemente da quantidade de cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.cardDestaque {
+  border: 2px solid #03b0ef;
+  background-color: #f0f9ff;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: #03b0ef;
+  color: white;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(3, 176, 239, 0.3);
+}
+
+.card h3 {
+  margin: 0 0 16px 0;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.cardInfo p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  color: #475569;
+  font-size: 15px;
+}
+
+.cardInfo strong {
+  color: #1e293b;
+}
+
+
+
+/* ======================================================
+   TABELAS
+====================================================== */
+.gridDuplo {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+.secaoTabela h2 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tableWrapper {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+  /* Permite scroll horizontal em telas pequenas */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+  /* Evita quebra de linha estranha */
+}
+
+.tabela th {
+  background-color: #f8fafc;
+  color: #475569;
+  padding: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela td {
+  padding: 16px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.tabela tbody tr {
+  transition: background-color 0.2s;
+}
+
+.tabela tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.emptyState {
+  text-align: center;
+  color: #94a3b8;
+  padding: 30px !important;
+  font-style: italic;
+}
+
+.valorDestacado {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.nomeFornecedor {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* ======================================================
+   BADGES E AÇÕES (TABELA)
+====================================================== */
+.statusBadge {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusAprovado {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.btnActionTable {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnActionTable:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.btnDelete {
+  background: white;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnDelete:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+.darkTheme {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.darkTheme .headerTitle h1,
+.darkTheme .comparativoSection h2,
+.darkTheme .secaoTabela h2,
+.darkTheme .card h3,
+.darkTheme .cardInfo strong,
+.darkTheme .valorDestacado,
+.darkTheme .nomeFornecedor {
+  color: #f8fafc;
+}
+
+.darkTheme .headerTitle p,
+.darkTheme .cardInfo p,
+.darkTheme .tabela th {
+  color: #94a3b8;
+}
+
+.darkTheme .btnSecundario {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.darkTheme .btnSecundario:hover {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+.darkTheme .card,
+.darkTheme .tableWrapper {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: none;
+}
+
+.darkTheme .card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.darkTheme .cardDestaque {
+  border-color: #03b0ef;
+  background-color: rgba(3, 176, 239, 0.05);
+}
+
+.darkTheme .tabela th {
+  background-color: #0f172a;
+  border-bottom-color: #334155;
+}
+
+.darkTheme .tabela td {
+  color: #cbd5e1;
+  border-bottom-color: #334155;
+}
+
+.darkTheme .tabela tbody tr:hover {
+  background-color: #0f172a;
+}
+
+.darkTheme .statusBadge {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+.darkTheme .statusAprovado {
+  background-color: rgba(22, 101, 52, 0.3);
+  color: #4ade80;
+}
+
+.darkTheme .btnActionTable {
+  background: transparent;
+  border-color: #475569;
+  color: #cbd5e1;
+}
+
+.darkTheme .btnActionTable:hover {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.darkTheme .btnDelete {
+  background: transparent;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.darkTheme .btnDelete:hover {
+  background-color: #450a0a;
+  border-color: #ef4444;
+}
+
+/* ======================================================
+   ESTADOS VAZIOS (PAINEL PRINCIPAL)
+====================================================== */
+.emptyStateContainer {
+  padding: 40px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ccc;
+  margin-top: 20px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.emptyIcon {
+  opacity: 0.5;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.emptySubtitle {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ======================================================
+   AJUSTES DOS BOTÕES DO CARD (PADRONIZADOS)
+====================================================== */
+.cardActionGrid {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+/* Base comum para garantir que os 3 fiquem EXATAMENTE do mesmo tamanho */
+.btnSecundarioCard,
+.btnAprovarCard,
+.btnExcluirCard {
+  flex: 1;
+  height: 38px;
+  /* Altura fixa igual para todos */
+  padding: 0 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  /* Impede que a borda mude o tamanho do botão */
+}
+
+/* Estilos individuais */
+.btnSecundarioCard {
+  background-color: white;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.btnSecundarioCard:hover {
+  background-color: #f1f5f9;
+}
+
+.btnAprovarCard {
+  background-color: #10b981;
+  color: white;
+  border: 1px solid transparent;
+  /* Borda transparente para igualar o box-sizing */
+}
+
+.btnAprovarCard:hover {
+  background-color: #059669;
+}
+
+.btnExcluirCard {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.btnExcluirCard:hover {
+  background-color: #fef2f2;
+}
+
+/* ======================================================
+   FILTROS DO HISTÓRICO
+====================================================== */
+.filtrosHistorico {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.linhaPeriodos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btnPeriodo {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnPeriodo:hover {
+  background-color: #f1f5f98e;
+  border-color: #94a3b8;
+}
+
+.activePeriodo {
+  background-color: #ff6b00;
+  border-color: #ff6b00;
+  color: white;
+}
+
+.activePeriodo:hover {
+  background-color: #e05e00;
+}
+
+.datasPersonalizadas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.datasPersonalizadas input {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.inputBuscaIcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  /* min-width: 220px; */
+  width: 100%;
+  color: #94a3b8;
+}
+
+.inputBuscaIcon input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #334155;
+  width: 100%;
+}
+
+/* Dark mode */
+.darkTheme .btnPeriodo {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.darkTheme .btnPeriodo:hover {
+  background-color: #334155;
+}
+
+.darkTheme .activePeriodo {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
+
+.darkTheme .datasPersonalizadas {
+  color: #94a3b8;
+}
+
+.darkTheme .datasPersonalizadas input {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.darkTheme .inputBuscaIcon {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.darkTheme .inputBuscaIcon input {
+  color: #f8fafc;
+}
+
+/* ======================================================
+   MODAIS
+====================================================== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.modalContentLg {
+  width: fit-content;
+  min-width: 350px;
+  max-width: 960px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.modalCloseBtn {
+  background: #f0f0f0;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.modalCloseBtn:hover {
+  background: #e2e2e2;
+  color: #ff4d4f;
+}
+
+.modalCardsGrid {
+  display: flex;
+  /* Mudamos de grid para flex */
+  gap: 16px;
+  justify-content: center;
+  /* Mantém o card único no centro */
+  /* Como não usamos flex-wrap: wrap, eles são OBRIGADOS a ficar na mesma linha */
+}
+
+.comparativoCard {
+  /* flex: 1; */
+  /* Faz com que os 3 cards dividam o espaço igualmente */
+  min-width: 230px;
+  /* Tamanho mínimo para não espremer o conteúdo */
+  max-width: 280px;
+  /* Segura o tamanho do card para não ficar gigante quando estiver sozinho */
+
+  /* Restante do seu código original: */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background-color: #fafafa;
+  transition: transform 0.2s;
+}
+
+.comparativoCardWinner {
+  border: 1px solid #b7eb8f;
+  background-color: #f6ffed;
+}
+
+.comparativoCardRejected {
+  opacity: 0.7;
+}
+
+.comparativoCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.comparativoCardTitleWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.comparativoCardTitleWrapper h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  flex: 1;
+  word-break: break-word;
+}
+
+.winnerBadge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #52c41a;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.comparativoCardTotal {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.comparativoCardWinner .comparativoCardTotal,
+.comparativoCardWinner h3 {
+  color: #237804;
+}
+
+/* ==========================================
+   ESTILOS DO MODAL DE ITENS (UPGRADE VISUAL)
+   ========================================== */
+
+/* Lista de Produtos */
+.produtoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* Espaçamento mais limpo entre os itens */
+}
+
+/* Novo layout de Card para cada item */
+.produtoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f8fafc;
+  /* Fundo cinza bem claro */
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.produtoItem:hover {
+  border-color: #cbd5e1;
+  transform: translateX(1.75px);
+  /* Animação suave ao passar o mouse */
+}
+
+/* Container para alinhar a Badge e o Nome */
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Badge (Etiqueta) da quantidade */
+.itemQtd {
+  background-color: #e2e8f0;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Nome do produto com mais peso */
+.itemName {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+/* Preço alinhado à direita com cor sutil */
+.itemPrice {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Rodapé do Modal separando os itens do total */
+.modalFooter {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px dashed #e2e8f0;
+  /* Linha tracejada elegante */
+  display: flex;
+  justify-content: flex-end;
+  /* Joga o total para a direita */
+}
+
+.modalTotal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #475569;
+}
+
+.modalTotal strong {
+  font-size: 22px;
+  /* Tamanho maior para dar destaque financeiro */
+  color: #0f172a;
+  font-weight: 800;
+}
+
+/* ======================================================
+   DARK MODE ADIÇÕES (MODAIS E EMPTY STATES)
+====================================================== */
+.darkTheme .emptyStateContainer {
+  background-color: #2a2a3c;
+  border-color: #444;
+  color: #aaa;
+}
+
+/* Novo visual do Modal baseado na imagem */
+.darkTheme .modalContent {
+  background-color: #1e1e2d;
+  /* Fundo idêntico ao da print */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2a2a3c;
+  border-radius: 10px;
+}
+
+.darkTheme .modalHeader {
+  border-bottom: none;
+  /* Remove linha extra */
+  margin-bottom: 16px;
+}
+
+.darkTheme .modalHeader h2 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.darkTheme .modalCloseBtn {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #a0a0b0;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+
+.darkTheme .modalCloseBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.darkTheme .produtoItem {
+  color: #a0a0b0;
+  border-bottom: none;
+  /* Deixa a lista mais limpa */
+  /* padding: 10px 0; */
+  font-size: 0.9rem;
+}
+
+.darkTheme .produtoItem strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.darkTheme .modalTotal {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 16px;
+  padding-top: 16px;
+  /* Linha sutil separando o total */
+}
+
+/* Restante das customizações (Comparativo) */
+.darkTheme .comparativoCard {
+  border-color: #333;
+  background-color: #232334;
+}
+
+.darkTheme .comparativoCardWinner {
+  border-color: rgba(40, 167, 69, 0.4);
+  background-color: rgba(40, 167, 69, 0.08);
+}
+
+.darkTheme .comparativoCardHeader {
+  border-bottom-color: #333;
+}
+
+.darkTheme .comparativoCardTitleWrapper h3 {
+  color: #ddd;
+}
+
+.darkTheme .comparativoCardWinner h3,
+.darkTheme .comparativoCardWinner .comparativoCardTotal {
+  color: #4ade80;
+}
+
+.darkTheme .winnerBadge {
+  background: #1b5e20;
+}
+
+.darkTheme .modalEmptyState {
+  background-color: #232334;
+  border-color: #444;
+}
+
+.darkTheme .btnSecundarioCard {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.darkTheme .btnSecundarioCard:hover {
+  background-color: #334155;
+}
+
+.darkTheme .btnExcluirCard {
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.darkTheme .btnExcluirCard:hover {
+  background-color: #450a0a;
+  border-color: #ef4444;
+}
+
+/* ==========================================
+   MODAL DE ITENS - DARK THEME
+   ========================================== */
+
+.darkTheme .produtoItem {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: #334155;
+}
+
+.darkTheme .produtoItem:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: #475569;
+}
+
+.darkTheme .itemQtd {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+.darkTheme .itemName {
+  color: #f1f5f9;
+}
+
+.darkTheme .itemPrice {
+  color: #94a3b8;
+}
+
+.darkTheme .modalFooter {
+  border-top-color: #334155;
+}
+
+.darkTheme .modalTotal {
+  color: #94a3b8;
+}
+
+.darkTheme .modalTotal strong {
+  color: #f8fafc;
+}
+
+/* ======================================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+====================================================== */
+@media (max-width: 1024px) {
+  .gridDuplo {
+    grid-template-columns: 1fr;
+    /* Transforma as tabelas para ficarem uma embaixo da outra */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerButtons {
+    width: 100%;
+  }
+
+  .filtrosHistorico {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inputBuscaIcon {
+    width: 100%;
+  }
+
+  .headerButtons button {
+    flex: 1;
+    /* Faz os botões ocuparem espaço igual no celular */
+    justify-content: center;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    /* Cards ficam em uma única coluna no celular */
+  }
+
+  .modalCardsGrid {
+    flex-direction: column;
+    /* Empilha os cards um embaixo do outro no celular */
+    align-items: center;
+  }
+
+  .comparativoCard {
+    max-width: 100%;
+    /* Permite que o card ocupe a tela toda no mobile */
+  }
+}

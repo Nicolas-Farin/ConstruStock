@@ -1,0 +1,530 @@
+.container {
+  background-color: #ecf2f7;
+  min-height: 100vh;
+  padding: 24px 30px;
+  font-family: 'Inter', sans-serif;
+  color: #334155;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.cardIMG {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+
+  display: none;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  /* font-size: 13px; */
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+.disabledInput {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.uploadBox {
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+ display: none;
+}
+
+.uploadBtn {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Sidebar Preview */
+.previewCard {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  position: sticky;
+  top: 10px;
+  align-self: start;
+  height: fit-content;
+}
+
+.sidebarFixed .previewCard {
+  position: fixed;
+  /* top: calc(50vh - 303px); */
+  top: 10.5%;
+  width: 320px;
+  /* mesma largura da sidebar */
+  transition: all 0.5 ease;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.previewIcon {
+  color: #f97316;
+}
+
+.previewImageContainer {
+  width: 100px;
+  aspect-ratio: 1;
+}
+
+.previewImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, .55);
+  color: white;
+  font-size: .75rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.previewImageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.previewImageWrapper:hover .previewImage {
+  transform: scale(1.05);
+}
+
+.previewImagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.previewName {
+  margin: 0;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  color: #1e293b;
+}
+
+.previewSku {
+  margin-top: -12px;
+
+  color: #64748b;
+}
+
+.badge {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.previewStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.previewPrice {
+  font-size: 2rem;
+  font-weight: 800;
+
+  color: #10b981;
+}
+
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.previewInfo div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.previewInfo span {
+  color: #64748b;
+}
+
+.previewInfo strong {
+  color: #1e293b;
+}
+
+.stockBar {
+  height: 10px;
+
+  background: #e2e8f0;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.stockProgress {
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition: 0.4s ease;
+}
+
+.previewPrices {
+  background: #f8fafc;
+
+  padding: 16px;
+
+  border-radius: 8px;
+}
+
+.previewPrices h4 {
+  margin-bottom: 14px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.highlightPrice {
+  color: #f97316;
+  font-weight: 700;
+}
+
+.marginText {
+  font-weight: 700;
+}
+
+.previewStats div {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.highlightPrice {
+  color: #f97316;
+  font-weight: bold;
+}
+
+.marginText {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.saveBtn {
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.previewName {
+  margin-bottom: 6px;
+}
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+
+.darkTheme {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.darkTheme .previewCard {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.darkTheme .previewHeader,
+.darkTheme .previewName,
+.darkTheme .previewInfo strong {
+  color: #f8fafc;
+}
+
+.darkTheme .previewSku,
+.darkTheme .previewInfo span {
+  color: #94a3b8;
+}
+
+.darkTheme .previewPrices {
+  background: #243244;
+}
+
+.darkTheme .imageOverlay {
+  background: rgba(0, 0, 0, .55);
+}
+
+.darkTheme .stockBar {
+  background: #334155;
+}
+
+.darkTheme .previewImagePlaceholder {
+  background: #243244;
+  border-color: #475569;
+}
+
+/* Container */
+.darkTheme.container {
+  background: #0f172a;
+}
+
+/* Header */
+.darkTheme .header h1 {
+  color: #f8fafc;
+}
+
+.darkTheme .header p {
+  color: #94a3b8;
+}
+
+/* Cards */
+.darkTheme .card,
+.darkTheme .previewCard {
+  background: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: none;
+}
+
+/* Títulos */
+.darkTheme .card h3,
+.darkTheme .previewTitle,
+.darkTheme .previewName {
+  color: #f8fafc;
+}
+
+/* Labels */
+.darkTheme .inputGroup label {
+  color: #cbd5e1;
+}
+
+/* Inputs */
+.darkTheme .inputGroup input,
+.darkTheme .inputGroup select,
+.darkTheme .inputGroup textarea {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+
+/* Placeholder */
+.darkTheme .inputGroup input::placeholder,
+.darkTheme .inputGroup textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Focus */
+.darkTheme .inputGroup input:focus,
+.darkTheme .inputGroup select:focus,
+.darkTheme .inputGroup textarea:focus {
+  border-color: #f97316;
+}
+
+/* Disabled */
+.darkTheme .disabledInput {
+  background: #243244;
+  color: #94a3b8;
+}
+
+/* Upload */
+.darkTheme .uploadBox {
+  background: #243244;
+  border-color: #475569;
+  color: #cbd5e1;
+}
+
+.darkTheme .uploadBtn {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* Sidebar */
+.darkTheme .imagePlaceholder {
+  background: #243244;
+  color: #94a3b8;
+}
+
+.darkTheme .previewStats div {
+  background: #243244;
+}
+
+/* Textos */
+.darkTheme small,
+.darkTheme p,
+.darkTheme span {
+  color: #cbd5e1;
+}
+
+/* Botões */
+.darkTheme .cancelBtn {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+
+.darkTheme .saveBtn {
+  background: #f97316;
+}
+
+/* Hover */
+.darkTheme .saveBtn:hover {
+  background: #ea580c;
+}
+
+.darkTheme .cancelBtn:hover {
+  background: #334155;
+}
+
+/* Error */
+.darkTheme .errorMessage {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}

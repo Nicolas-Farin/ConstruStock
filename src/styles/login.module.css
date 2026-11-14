@@ -1,0 +1,228 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #ffffff;
+}
+
+
+.hero-side {
+    flex: 1.2;
+    background-image: url('../imgs/background.png');
+    color: #ffffff;
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.logo-placeholder {
+    background-color: #ff7a17;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.logo-placeholder img {
+    width: 45px;
+    height: 45px;
+}
+
+.text-orange {
+    color: #ff7a17;
+    /* O mesmo laranja usado no seu logo e botões */
+    display: inline-block;
+    /* Garante que o span se comporte bem no fluxo do texto */
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6b00;
+}
+
+.company-name {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero-side h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.hero-side p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+    max-width: 450px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+}
+
+.feature-icon {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.feature-text h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.feature-text p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+    background-color: #ecf2f7;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 80px 60px;
+    border: #92929241 1px solid;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #ffffff;
+}
+
+.login-card h2 {
+    font-size: 1.8rem;
+    color: #1a2b45;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #fcfcfc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff7a17;
+    box-shadow: 0 0 0 3px rgba(255, 122, 23, 0.1);
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #ff7a17;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff7a17;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #e66a10;
+}
+
+.create-account {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.create-account a {
+    color: #ff7a17;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 25px;
+    font-size: 0.75rem;
+    color: #999;
+}

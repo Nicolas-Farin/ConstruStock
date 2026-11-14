@@ -1,0 +1,454 @@
+/* ======================================================
+   BASE E CONTAINERS
+====================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 30px;
+    min-height: 90vh;
+    background-color: #ecf2f7;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1e293b;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.header p {
+    font-size: 0.925rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.backButton:hover {
+    background: #f8fafc;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+/* ======================================================
+   GRID: FORMULÁRIO E PREVIEW
+====================================================== */
+.contentGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+/* ======================================================
+   CARD DO FORMULÁRIO (COLUNA ESQUERDA)
+====================================================== */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 26px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.25s ease;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: #0f172a;
+}
+
+.cardHeader h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: 0.2s ease;
+    width: 100%;
+    outline: none;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.inputGroup select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* COLOR PICKER */
+.colorRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.colorInput {
+    width: 48px;
+    height: 42px;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent;
+    cursor: pointer;
+}
+
+.colorInput::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.colorCode {
+    background: #f8fafc;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+
+/* AÇÕES */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    /* margin-top: 10px; */
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.cancelButton {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.cancelButton:hover {
+    background: #f8fafc;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+.saveButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f97316;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.saveButton:hover {
+    background: #ea580c;
+    transform: translateY(-1px);
+}
+
+/* ======================================================
+   PREVIEW CARD (COLUNA DIREITA)
+====================================================== */
+.previewContainer {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.previewSectionTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.previewHelperText {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0 0 20px 0;
+}
+
+/* Estilo baseado no card da imagem fornecida */
+.categoryCardPreview {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: 0.3s ease;
+}
+
+.cardPreviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.iconBox {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alertBadgePreview {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.cardPreviewBody {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cardPreviewBody h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.cardPreviewBody span {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.cardPreviewFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.stockValue {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stockValue span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.stockValue strong {
+    font-size: 1.15rem;
+    color: #0f172a;
+}
+
+.trendIndicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #10b981; /* Verde sucesso */
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ======================================================
+   MODO ESCURO
+====================================================== */
+.darkTheme {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+.darkTheme .header h1,
+.darkTheme .cardHeader,
+.darkTheme .previewSectionTitle,
+.darkTheme .cardPreviewBody h4,
+.darkTheme .stockValue strong {
+    color: #f8fafc;
+}
+
+.darkTheme .header p,
+.darkTheme .previewHelperText,
+.darkTheme .cardPreviewBody span,
+.darkTheme .stockValue span {
+    color: #94a3b8;
+}
+
+.darkTheme .backButton,
+.darkTheme .cancelButton {
+    background: #1e293b;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+.darkTheme .backButton:hover,
+.darkTheme .cancelButton:hover {
+    background: #334155;
+    border-color: #475569;
+}
+
+.darkTheme .card {
+    background: linear-gradient(180deg, #172033 0%, #1e293b 100%);
+    border-color: #334155;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.darkTheme .inputGroup label {
+    color: #e2e8f0;
+}
+
+.darkTheme .inputGroup input,
+.darkTheme .inputGroup textarea,
+.darkTheme .inputGroup select {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+.darkTheme .inputGroup input:focus,
+.darkTheme .inputGroup textarea:focus,
+.darkTheme .inputGroup select:focus {
+    border-color: #3b82f6;
+    background: #1e293b;
+}
+
+.darkTheme .colorCode {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+.darkTheme .colorInput::-webkit-color-swatch {
+    border-color: #334155;
+}
+
+.darkTheme .actions {
+    border-top-color: #334155;
+}
+
+/* PREVIEW NO TEMA ESCURO (Baseado na sua imagem) */
+.darkTheme .categoryCardPreview {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+.darkTheme .alertBadgePreview {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+/* ======================================================
+   RESPONSIVIDADE
+====================================================== */
+@media (max-width: 992px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .previewContainer {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .cancelButton,
+    .saveButton {
+        width: 100%;
+        justify-content: center;
+    }
+}

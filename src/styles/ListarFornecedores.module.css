@@ -1,0 +1,948 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E CONTAINER
+   ========================================================================== */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 30px 0 30px;
+    background: #f8fafc;
+    color: #1e293b;
+    transition: .25s;
+}
+
+.darkTheme {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.avatarEmpresa {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: white;
+
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header p {
+    /* margin-top: 8px; */
+    font-size: 14px;
+    color: #64748b;
+}
+
+.darkTheme .header p {
+    color: #94a3b8;
+}
+
+/* Botão Atualizar Lista */
+.btnAtualizar {
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.btnAtualizar:hover {
+
+    transform: translateY(-2px);
+
+    background: #1d4ed8;
+}
+
+.darkTheme .btnAtualizar {
+
+    background: #2563eb;
+}
+
+/* Animação de rotação para o loading */
+.girar {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   BARRA DE PESQUISA (SEARCH BAR)
+   ========================================================================== */
+.searchBarWrapper {
+
+    position: relative;
+
+    max-width: 550px;
+
+    margin-bottom: 35px;
+
+}
+
+.searchInput {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding-left: 48px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dbe2ea;
+
+    background: white;
+
+    transition: .25s;
+
+    font-size: .95rem;
+}
+
+.searchInput:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, .12);
+
+    outline: none;
+}
+
+.darkTheme .searchInput {
+
+    background: #1e293b;
+
+    border-color: #334155;
+
+    color: white;
+}
+
+.searchIcon {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   ALERTAS DE STATUS (LOADING, ERRO, VAZIO)
+   ========================================================================== */
+.statusInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    gap: 1rem;
+}
+
+.darkTheme .statusInfo {
+    color: #94a3b8;
+}
+
+.erroBox {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    color: #991b1b;
+}
+
+.darkTheme .erroBox {
+    background-color: rgba(153, 27, 27, 0.2);
+    border-color: #f87171;
+    color: #fca5a5;
+}
+
+.btnTentarNovamente {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btnTentarNovamente:hover {
+    background-color: #b91c1c;
+}
+
+/* ==========================================================================
+   GRID DE CARTÕES E CARD INDIVIDUAL
+   ========================================================================== */
+.listaGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.fornecedorCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    padding: 1.4rem;
+
+    transition: all .25s ease;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, .05),
+        0 10px 25px rgba(15, 23, 42, .04);
+}
+
+.darkTheme .fornecedorCard {
+    background: #1e293b;
+    border: 1px solid #334155;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, .25),
+        0 12px 30px rgba(0, 0, 0, .20);
+}
+
+.fornecedorCard:hover {
+    transform: translateY(-2px);
+
+    /* border-color: #3b82f6;
+
+    box-shadow:
+        0 10px 25px rgba(59, 130, 246, .12),
+        0 20px 40px rgba(15, 23, 42, .12); */
+}
+
+.darkTheme .fornecedorCard:hover {
+    border-color: #475569;
+}
+
+/* ==========================================================================
+   SEÇÕES INTERNAS DO CARD (HEADER, CORPO, FOOTER)
+   ========================================================================== */
+/* Cabeçalho do Card */
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.empresaInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.empresaInfo h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.empresaInfo span {
+    margin-top: 4px;
+    display: block;
+    color: #64748b;
+    font-size: .82rem;
+}
+
+.darkTheme .empresaInfo span {
+    color: #94a3b8;
+}
+
+/* Badge de Categoria */
+.badgeCategoria {
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: .75rem;
+
+    font-weight: 600;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.darkTheme .badgeCategoria {
+    background-color: rgba(29, 78, 216, 0.2);
+    color: #60a5fa;
+}
+
+/* Corpo do Card (Contatos rápidos) */
+.cardContatoGrid {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    border: none;
+    margin: 0;
+}
+
+.darkTheme .cardContatoGrid {
+    background: #0f172a;
+}
+
+.contatoItem {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .8rem;
+
+    padding: .4rem 0;
+}
+
+.contatoItem svg {
+
+    color: #3b82f6;
+}
+
+.contatoItem span {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.darkTheme .contatoItem {
+    color: #cbd5e1;
+}
+
+
+/* Rodapé do Card (Condições Comerciais) */
+.cardFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.footerInfo {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    background: #f8fafc;
+
+    padding: .8rem;
+
+    border-radius: 8px;
+}
+
+.darkTheme .footerInfo {
+
+    background: #0f172a;
+}
+
+.footerInfo svg {
+
+    color: #2563eb;
+
+    margin-top: 2px;
+}
+
+.footerInfo p {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin: 0;
+
+    font-size: .75rem;
+}
+
+.footerInfo span {
+
+    margin-top: 4px;
+
+    font-size: .9rem;
+
+    font-weight: 600;
+}
+
+.darkTheme .footerInfo p {
+    color: #94a3b8;
+}
+
+.darkTheme .footerInfo span {
+    color: #f8fafc;
+}
+
+/* Botão de Ação / Detalhes */
+.cardAcoes {
+    margin-top: auto;
+}
+
+.btnDetalhes {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 600;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: .25s;
+}
+
+.btnDetalhes:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+.darkTheme .btnDetalhes {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+.darkTheme .btnDetalhes:hover {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .65);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(4px);
+}
+
+.modal {
+
+    width: min(950px, 95vw);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+    position: relative;
+
+    animation: aparecer .25s ease;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .18);
+}
+
+.darkTheme .modal {
+    background: #1e293b;
+    color: #fff;
+}
+
+.modalActions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btnExcluir {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+
+    background: #ef4444;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.btnExcluir:hover {
+
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.btnFechar {
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .25s;
+
+}
+
+.darkTheme .btnFechar {
+    background: #334155;
+    color: white;
+}
+
+.btnFechar:hover {
+    transform: scale(1.04);
+    background: #ef4444;
+    color: white;
+}
+
+.modal h2 {
+
+    margin: 0;
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+}
+
+.modal h4 {
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-weight: 500;
+
+}
+
+.darkTheme .modal h4 {
+    color: #94a3b8;
+}
+
+.modalOverlayConfirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContentConfirm {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 28px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modalContentConfirm h3 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    color: #f8fafc;
+}
+
+.modalContentConfirm p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.modalContentConfirm strong {
+    color: #f8fafc;
+}
+
+.modalActionsConfirm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btnCancelConfirm {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #f1f5f9;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnCancelConfirm:hover {
+    background-color: #334155;
+}
+
+.btnDeleteConfirm {
+    background-color: #ef4444;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnDeleteConfirm:hover {
+    background-color: #dc2626;
+}
+
+.btnEditar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnEditar:hover {
+    background: #1d4ed8;
+}
+
+.btnEditar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.inputEdicao,
+.textareaEdicao {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #1e2536;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.textareaEdicao {
+    resize: vertical;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.modalGrid {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 18px;
+
+}
+
+.enderecoCard {
+    grid-column: span 2;
+}
+
+.modalGrid>div {
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 16px;
+
+}
+
+.darkTheme .modalGrid>div {
+
+    background: #0f172a;
+
+    border-color: #334155;
+
+}
+
+.modalGrid strong {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: .85rem;
+
+    color: #64748b;
+
+}
+
+.darkTheme .modalGrid strong {
+    color: #94a3b8;
+}
+
+.modalGrid p {
+
+    margin: 0;
+
+    font-size: .95rem;
+
+    font-weight: 500;
+
+    word-break: break-word;
+
+}
+
+/* ===========================
+   OBSERVAÇÕES
+=========================== */
+
+.observacoesModal {
+
+    margin-top: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+}
+
+.darkTheme .observacoesModal {
+
+    background: #0f172a;
+
+    border-color: #334155;
+
+}
+
+.observacoesModal strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+.observacoesModal p {
+
+    margin: 0;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+
+}
+
+.headerDireita {
+    display: flex;
+    gap: 18px;
+}
+
+.btnSecundario {
+    background-color: white;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    padding: 16px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    height: 44px;
+    align-self: center;
+}
+
+.btnSecundario:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.darkTheme .btnSecundario {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+.darkTheme .btnSecundario:hover {
+    background-color: #334155;
+    border-color: #475569;
+}
+
+/* ===========================
+   Scroll
+=========================== */
+
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 20px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media (max-width:700px) {
+
+    .modal {
+
+        width: 100%;
+
+        max-height: 95vh;
+
+        padding: 22px;
+
+    }
+
+    .modal h2 {
+        font-size: 1.5rem;
+        padding-right: 40px;
+    }
+
+    .modalGrid {
+        grid-template-columns: 1fr;
+    }
+
+}

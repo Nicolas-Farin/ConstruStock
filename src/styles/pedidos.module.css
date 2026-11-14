@@ -1,0 +1,473 @@
+.container {
+  padding: 24px 30px;
+  background-color: #ecf2f7;
+  min-height: 90vh;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.titulo {
+  color: black;
+}
+
+.darkTheme .titulo{
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  color: #0f172a;
+  margin: 0 0 5px 0;
+}
+
+.header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 14px;
+}
+
+.btnNovoPedido {
+  background-color: #ff6b00;
+  /* Laranja da identidade visual */
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnNovoPedido:hover {
+  background-color: #e05e00;
+}
+
+.devolucaobtn {
+  background-color: white;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.devolucaobtn:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.painelFiltros {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.linhaPeriodos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.btnPeriodo {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.activePeriodo {
+  background-color: #0f172a;
+  /* Azul escuro do layout */
+  color: white;
+}
+
+.datasPersonalizadas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+  margin-left: 10px;
+}
+
+.datasPersonalizadas input {
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+.linhaBuscaTextual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.inputBuscaIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #94a3b8;
+}
+
+.inputBuscaIcon input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  color: #334155;
+}
+
+.tableCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabela th {
+  background-color: #f8fafc;
+  color: #64748b;
+  padding: 14px 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela td {
+  padding: 14px 16px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.idBadge {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.listaTagsProdutos {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.prodTag {
+  background-color: #eff6ff;
+  color: #1e40af;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.valorTotalFila {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.btnNf {
+  background: none;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #334155;
+  transition: background 0.1s;
+}
+
+.btnNf:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* =========================================
+   MODAL DE CONFIRMAÇÃO DE REVERSÃO
+========================================= */
+
+/* Fundo escuro que cobre a tela toda */
+.modalOverlayConfirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Fica acima de todos os outros elementos */
+  animation: fadeIn 0.2s ease-in-out;
+  backdrop-filter: blur(2px);
+  /* Dá um efeito de desfoque no fundo */
+}
+
+/* Caixa branca do modal */
+.modalContentConfirm {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalContentConfirm h3 {
+  margin: 0;
+  color: #1f2937;
+  /* Cinza bem escuro */
+  font-size: 1.25rem;
+}
+
+.modalContentConfirm p {
+  margin: 0;
+  color: #4b5563;
+  /* Cinza médio */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Container dos botões */
+.modalActionsConfirm {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Botão de Cancelar */
+.btnCancelConfirm {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+  color: #4b5563;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnCancelConfirm:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Botão de Excluir/Reverter (Vermelho) */
+.btnDeleteConfirm {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ef4444;
+  /* Vermelho alerta */
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnDeleteConfirm:hover {
+  background-color: #dc2626;
+  /* Vermelho mais escuro no hover */
+}
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   SUPORTE AO TEMA ESCURO (DARK THEME)
+========================================= */
+.darkTheme .modalContentConfirm {
+  background-color: #1f2937;
+  /* Fundo escuro */
+  border: 1px solid #374151;
+}
+
+.darkTheme .modalContentConfirm h3 {
+  color: #f9fafb;
+}
+
+.darkTheme .modalContentConfirm p {
+  color: #d1d5db;
+}
+
+.darkTheme .btnCancelConfirm {
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.darkTheme .btnCancelConfirm:hover {
+  background-color: #374151;
+}
+
+
+/* ======================================================
+    DARK MODE
+====================================================== */
+
+/* Fundo Principal */
+.darkTheme {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Cabeçalhos e Textos de Ênfase */
+.darkTheme .header h1,
+.darkTheme strong,
+.darkTheme .valorTotalFila {
+  color: #f1f5f9;
+}
+
+/* Subtextos */
+.darkTheme .header p,
+.darkTheme .datasPersonalizadas span {
+  color: #94a3b8;
+}
+
+/* Paineis e Cards Internos */
+.darkTheme .painelFiltros,
+.darkTheme .tableCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+/* Divisores de Seção Interna */
+.darkTheme .linhaPeriodos {
+  border-bottom-color: #334155;
+}
+
+/* Inputs de Texto e Barras de Filtro */
+.darkTheme .inputBuscaIcon,
+.darkTheme .datasPersonalizadas input {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+.darkTheme .inputBuscaIcon input {
+  color: #f8fafc;
+}
+
+.darkTheme .inputBuscaIcon input::placeholder {
+  color: #94a3b8;
+}
+
+/* Botões de Período (Não ativos) */
+.darkTheme .btnPeriodo {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+.darkTheme .btnPeriodo:hover {
+  background: #475569;
+}
+
+/* Botão de Período Selecionado (Invertido para contraste claro) */
+.darkTheme .activePeriodo {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Configurações de Estilo da Tabela */
+.darkTheme .tabela th {
+  background-color: #0f172a;
+  color: #94a3b8;
+  border-bottom-color: #334155;
+}
+
+.darkTheme .tabela td {
+  color: #cbd5e1;
+  border-bottom-color: #334155;
+}
+
+/* Emblema de ID (#10023) */
+.darkTheme .idBadge {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+/* Tags de Produtos da Lista */
+.darkTheme .prodTag {
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+}
+
+/* Botão de Exportação de Nota Fiscal (NF) */
+.darkTheme .btnNf {
+  border-color: #475569;
+  color: #cbd5e1;
+}
+
+.darkTheme .btnNf:hover {
+  background-color: #334155;
+  border-color: #64748b;
+}

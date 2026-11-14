@@ -1,0 +1,975 @@
+/* styles.module.css */
+
+/* ==========================================================================
+   1. BASE E GLOBAIS
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+:global(body) {
+  background-color: #ecf2f7;
+  color: #333;
+}
+
+:global(html),
+:global(body),
+:global(#root) {
+  min-height: 100%;
+}
+
+.pageEnter {
+  animation: pageEnter 0.6s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Utilitários de Texto */
+.textPositive {
+  color: #10b981;
+}
+
+.textNegative {
+  color: #ef4444;
+}
+
+.textMuted {
+  color: #a0aec0;
+}
+
+/* ==========================================================================
+   2. LAYOUT PRINCIPAL
+   ========================================================================== */
+.appContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dashboardBody {
+  padding: 24px 30px 0 30px;
+}
+
+.pageTitle {
+  margin-bottom: 20px;
+}
+
+.pageTitle h1 {
+  font-size: 1.5rem;
+  color: #1a202c;
+}
+
+.pageTitle p {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   3. SIDEBAR
+   ========================================================================== */
+.sidebar {
+  width: 260px;
+  background-color: #1e2b3c;
+  color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarLogo {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #2d3748;
+}
+
+.logoIcon {
+  color: #f97316;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 20px 0;
+  flex: 1;
+}
+
+.sidebarMenu li {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebarMenu li:hover,
+.active {
+  background-color: #2d3748;
+  color: #fff;
+  border-left: 4px solid #f97316;
+}
+
+/* ==========================================================================
+   4. HEADER
+   ========================================================================== */
+
+
+/* ==========================================================================
+   5. BOTÕES
+   ========================================================================== */
+.btnPrimary {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.btnOutline {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  height: 36px;
+}
+
+.btnOutline:hover,
+.btnPrimary:hover {
+  transform: scale(1.03);
+}
+
+.btnOutline:active,
+.btnPrimary:active {
+  transform: scale(0.98);
+}
+
+.btnOutline:focus,
+.btnOutline:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Rotação */
+.spinning {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Feedback visual dos cards */
+.refreshing {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.refreshAnimation {
+  animation: refreshFade 0.5s ease;
+}
+
+@keyframes refreshFade {
+  from {
+    opacity: 0.65;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   6. CARDS DE ESTATÍSTICAS E GRÁFICOS
+   ========================================================================== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.statCard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+
+
+.statCardHeader {
+  display: flex;
+  justify-content: space-between;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* color: #1a202c; */
+  margin-bottom: 5px;
+}
+
+.statFooter {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  /* gap: 5px; */
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+  align-items: start;
+}
+
+.chartCard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  --bar-fill: #1e3a8a;
+}
+
+.chartWrapper {
+  width: 100%;
+  height: 320px;
+}
+
+.recharts-wrapper,
+.recharts-surface {
+  overflow: visible !important;
+}
+
+.chartTitle {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.chartTitleTable {
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   7. LISTA DE ALERTAS
+   ========================================================================== */
+.alertScrollArea {
+  max-height: 320px;
+  /* Mantém a proporção com o gráfico ao lado */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Customização da barra de rolagem */
+.alertScrollArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.alertScrollArea::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.alertScrollArea::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Scrollbar no tema escuro */
+.darkDashboard .alertScrollArea::-webkit-scrollbar-track {
+  background: #2b384e;
+}
+
+.darkDashboard .alertScrollArea::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.darkDashboard .alertScrollArea::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.alertBox {
+  margin-bottom: 16px;
+}
+
+.alertItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  /* Respiro antes da barra de progresso */
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* color: #334155; */
+}
+
+.progressBarBg {
+  background-color: #e2e8f0;
+  height: 6px;
+  border-radius: 3px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.progressBarFill {
+  background-color: #f97316;
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   8. TABELA DE PRODUTOS
+   ========================================================================== */
+.tableContainer {
+  background: #fff;
+  padding: 20px 20px 0 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  /* 🚨 COMENTAMOS O OVERFLOW PARA NÃO CORTAR O POP-OVER */
+  /* overflow: hidden; */
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+
+  /* 🌟 A MÁGICA AQUI: Garante que o popover flutue exatamente abaixo do botão */
+  position: relative;
+}
+
+th {
+  color: #718096;
+  font-weight: 500;
+  background-color: #f5faff;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: hsla(0, 0%, 100%, 0.15);
+}
+
+/* Badges de Estoque */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.inStock {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.lowStock {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.inStock,
+.lowStock,
+.semEstoque,
+.acimaCapacidade,
+.estoqueElevado {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.inStock {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* ATUALIZADO: agora é "baixo, mas ainda tem estoque" -> âmbar (antes era vermelho) */
+.lowStock {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* NOVO */
+.semEstoque {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* NOVO */
+.acimaCapacidade {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* NOVO */
+.estoqueElevado {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.trLowStock {
+  background: rgba(239, 68, 68, 0.06);
+  transition: 0.2s ease;
+}
+
+.trLowStock:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.darkDashboard .trLowStock {
+  background: rgba(239, 68, 68, 0.04);
+  transition: 0.2s ease;
+}
+
+.darkDashboard .trLowStock:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* ==========================================================================
+   NOVAS CLASSES PARA DROPDOWNS E BOTÕES ATIVOS
+   ========================================================================== */
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: #ffffff;
+  /* Fundo branco no tema claro */
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  width: 220px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 8px;
+
+  /* --- Scrollbar Padrão (Firefox) - Tema Claro --- */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* --- Scrollbar Webkit (Chrome, Safari, Edge) - Tema Claro --- */
+.dropdownMenu::-webkit-scrollbar {
+  width: 5px;
+  /* Deixa a barra bem fina e discreta */
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+  background: transparent;
+  /* Remove o fundo da pista para não poluir visualmente */
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  /* Cor sutil e semitransparente */
+  border-radius: 10px;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Leve destaque ao passar o mouse */
+}
+
+/* Essa classe vai anular o "top" e forçar o menu a subir */
+.dropdownMenu.dropUp {
+  top: auto;
+  /* Cancela o top: 100% */
+  bottom: 100%;
+  /* Alinha a base do menu com o topo do botão */
+  margin-top: 0;
+  margin-bottom: 4px;
+  /* Dá um leve respiro acima do botão */
+}
+
+/* Fundo do Dropdown (Dark Mode) */
+.darkDashboard .dropdownMenu {
+  background-color: #1e293b;
+  /* Fundo escuro no tema dark */
+  border-color: #334155;
+
+  /* --- Scrollbar Padrão (Firefox) - Tema Escuro --- */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* --- Scrollbar Webkit (Chrome, Safari, Edge) - Tema Escuro --- */
+.darkDashboard .dropdownMenu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  /* Tom claro e transparente para contrastar no dark */
+}
+
+.darkDashboard .dropdownMenu::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Estilo Base do Botão Outline (Light Mode) - Caso não tenha no seu CSS */
+.btnOutline {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnOutline:hover {
+  background-color: #f1f5f9;
+}
+
+/* Estado Ativo do Botão (Filtro Selecionado) */
+.btnActive {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.darkDashboard .btnActive {
+  background-color: #1e3a8a;
+  /* Azul escuro para destacar no dark mode */
+  border-color: #3b82f6;
+  color: #bfdbfe;
+}
+
+/* ==========================================================================
+   NOVOS ESTILOS DO HEADER (Pesquisa, Temas e Dropdowns)
+   ========================================================================== */
+
+/* Containers Base */
+.searchContainer {
+  position: relative;
+}
+
+.searchInput {
+  padding: 8px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 275px;
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #f97316;
+}
+
+/* Resultados da Busca (Flutuante) */
+.searchResults {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.searchItem {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchItem:last-child {
+  border-bottom: none;
+}
+
+.searchItem:hover {
+  background-color: #f8fafc;
+}
+
+.searchActions {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  /* Esconde até dar hover */
+  transition: opacity 0.2s;
+}
+
+.searchItem:hover .searchActions {
+  opacity: 1;
+  /* Mostra no hover */
+}
+
+.btnActionText {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnActionText:hover {
+  text-decoration: underline;
+}
+
+/* Botão de Ícone (Tema) */
+.iconButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.iconButton:hover {
+  background-color: #f1f5f9;
+}
+
+/* Perfil e Dropdown do Usuário */
+.userProfileWrapper {
+  position: relative;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.userProfile:hover {
+  background-color: #f1f5f9;
+  /* Escurece o fundo no hover */
+}
+
+.userAvatar {
+  background-color: #f97316;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.userInfo span {
+  font-size: 12px;
+  color: #718096;
+}
+
+.userDropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 1000;
+  padding: 8px 0;
+  animation: fadeUp 0.2s ease;
+}
+
+.dropdownItem {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f8fafc;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 6px 0;
+}
+
+.dropdownLogout {
+  color: #ef4444;
+}
+
+.dropdownLogout:hover {
+  background-color: #fef2f2;
+}
+
+/* =========================================
+   MODO ESCURO - DASHBOARD
+   ========================================= */
+
+/* Fundo da página principal */
+.darkDashboard .mainContent,
+.darkDashboard .dashboardBody {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Textos principais */
+.darkDashboard .pageTitle h1,
+.darkDashboard .chartTitle {
+  color: #f1f5f9;
+}
+
+/* Tema escuro */
+.darkDashboard .progressBarBg {
+  background-color: #334155;
+}
+
+.darkDashboard .pageTitle p,
+.darkDashboard .textMuted {
+  color: #94a3b8;
+}
+
+/* Cards de Estatísticas e Gráficos */
+.darkDashboard .statCard,
+.darkDashboard .chartCard,
+.darkDashboard .tableContainer {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: none;
+  --bar-fill: #4275b5;
+  /* azul claro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Botões com outline */
+.darkDashboard .btnOutline {
+  background-color: transparent;
+  border-color: #475569;
+  color: #cbd5e1;
+}
+
+.darkDashboard .btnOutline:hover {
+  background-color: #334155;
+  color: #fff;
+}
+
+/* Inputs de busca e modais (Fornecedores/Categorias) */
+.darkDashboard input[type="text"] {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.darkDashboard label span {
+  color: #cbd5e1 !important;
+}
+
+/* Ajustes da tabela, se houver */
+.darkDashboard table th,
+.darkDashboard table td {
+  border-color: #334155;
+  /* color: #e2e8f0; */
+}
+
+.darkDashboard th {
+  background-color: #2b3a50;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.darkDashboard table th,
+.darkDashboard table td {
+  border-color: #334155;
+  /* color: #e2e8f0; */
+}
+
+/* Estado Ativo Específico para os Botões de Ordenação */
+.btnSortActive {
+  background-color: #e2e8f0 !important;
+  /* Cinza claro no Light Mode */
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+.darkDashboard .btnSortActive {
+  /* Se você quiser o fundo branco (#ffffff), o texto TEM que ser escuro (#0f172a) */
+  background-color: #ffffff !important;
+  border-color: #64748b !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   9. ANIMAÇÕES GLOBAIS E TRANSIÇÕES COMPARTILHADAS
+   ========================================================================== */
+@keyframes fadeUp {
+  from {
+    transform: translateY(12px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes tableFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tableAnimated {
+  animation: tableFade 0.35s ease;
+}
+
+/* Aplicação de fadeUp nos blocos principais */
+.statCard,
+.chartCard,
+.tableContainer {
+  animation: fadeUp 0.5s ease forwards;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* IMPORTANTE */
+  opacity: 1;
+}
+
+.chartCard {
+  animation-delay: 0.35s;
+}
+
+.tableContainer {
+  animation-delay: 0.45s;
+}
+
+.statCard:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.statCard:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.statCard:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.statCard:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.statCard:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.statCard:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+/* Hover nos cards principais */
+.statCard:hover,
+.chartCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}

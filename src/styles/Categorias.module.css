@@ -1,0 +1,303 @@
+.container {
+    padding: 24px 30px;
+    background-color: #ecf2f7;
+    min-height: 90vh;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header {
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 0;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ======================================================
+   TOP CARDS
+====================================================== */
+
+.topCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.topCard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+}
+
+.topCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.topCardIcon {
+    padding: 8px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+}
+
+.topCardGrowth {
+    color: #10b981;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.topCardValue {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 0;
+}
+
+.topCardText {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ======================================================
+   SECTION HEADER
+====================================================== */
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 0;
+}
+
+.sectionSubtitle {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.newButton {
+    background-color: #f97316;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.newButton:hover {
+    background-color: #ea580c;
+}
+
+/* ======================================================
+   GRID
+====================================================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.iconBox {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.alertBadge {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+}
+
+.cardProducts {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0 0 16px 0;
+}
+
+.stockText {
+    color: #64748b;
+    font-size: 12px;
+    margin: 0 0 4px 0;
+}
+
+.stockRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stockValue {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.growthRow {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ======================================================
+   DARK MODE
+====================================================== */
+
+.darkTheme {
+    background-color: #0f172a;
+}
+
+/* Header */
+
+.darkTheme .title {
+    color: #f8fafc;
+}
+
+.darkTheme .subtitle {
+    color: #94a3b8;
+}
+
+/* Top Cards */
+
+.darkTheme .topCard {
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: none;
+}
+
+.darkTheme .topCardIcon {
+    background-color: #334155;
+}
+
+.darkTheme .topCardValue {
+    color: #f8fafc;
+}
+
+.darkTheme .topCardText {
+    color: #cbd5e1;
+}
+
+/* Section */
+
+.darkTheme .sectionTitle {
+    color: #f8fafc;
+}
+
+.darkTheme .sectionSubtitle {
+    color: #94a3b8;
+}
+
+/* Cards */
+
+.darkTheme .card {
+    background-color: #1e293b;
+    border-color: #334155;
+    /* box-shadow: none; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.darkTheme .cardTitle {
+    color: #f8fafc;
+}
+
+.darkTheme .topCards {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.darkTheme .cardProducts {
+    color: #cbd5e1;
+}
+
+.darkTheme .stockText {
+    color: #94a3b8;
+}
+
+.darkTheme .stockValue {
+    color: #f8fafc;
+}
+
+/* Hover */
+
+.darkTheme .card:hover {
+    background-color: #243244;
+}
+
+/* Alert */
+
+.darkTheme .alertBadge {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+}

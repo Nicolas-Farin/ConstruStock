@@ -1,0 +1,204 @@
+/* =========================================
+   MODO CLARO (PADRÃO)
+   ========================================= */
+.container {
+    padding: 24px 30px 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    /* min-height: 90vh; */
+    height: 100%;
+    background-color: #f8fafc;
+    color: #0f172a;
+
+    /* Variáveis para o Gráfico */
+    --chart-grid: #e2e8f0;
+    --chart-text: #64748b;
+    --tooltip-bg: #ffffff;
+    --tooltip-border: #cbd5e1;
+    --tooltip-text: #0f172a;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.title {
+    /* font-size: 1.75rem; */
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.subtitle {
+    margin: 0;
+    color: #64748b;
+    /* font-size: 0.95rem; */
+    font-size: 14px;
+}
+
+/* --- PAINEL DE FILTROS --- */
+.filtersCard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filterTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.filtersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.selectInput {
+    background-color: #f8fafc;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.selectInput:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* --- GRÁFICO --- */
+.chartCard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 24px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chartTitle {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.chartWrapper {
+    flex: 1;
+    width: 100%;
+    min-height: 300px;
+}
+
+.emptyState {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #94a3b8;
+    font-size: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+:global(.dark-mode) {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+}
+
+:global(.dark-mode) .container {
+    background-color: transparent;
+    color: #f1f5f9;
+
+    --chart-grid: #334155;
+    --chart-text: #94a3b8;
+    --tooltip-bg: #1e293b;
+    --tooltip-border: #334155;
+    --tooltip-text: #f8fafc;
+}
+
+:global(.dark-mode) .subtitle,
+:global(.dark-mode) .label {
+    color: #94a3b8;
+}
+
+:global(.dark-mode) .filterTitle {
+    color: #f8fafc;
+}
+
+:global(.dark-mode) .filtersCard,
+:global(.dark-mode) .chartCard {
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+:global(.dark-mode) .selectInput {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+:global(.dark-mode) .selectInput:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+:global(.dark-mode) .chartTitle {
+    color: #f8fafc;
+}
+
+:global(.dark-mode) .emptyState {
+    background: #0f172a;
+    border-color: #334155;
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULARES)
+   ========================================= */
+@media (max-width: 600px) {
+    .filtersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .chartCard {
+        padding: 16px;
+        height: 400px;
+    }
+}

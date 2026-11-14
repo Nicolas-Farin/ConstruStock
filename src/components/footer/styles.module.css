@@ -1,0 +1,60 @@
+/* Footer.module.css */
+.footer {
+  margin-top: 26px;
+  padding: 24px 30px;
+  background-color: transparent;
+  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+  width: 98%;
+  box-sizing: border-box;
+  justify-self: center;
+  transition: border-color 0.2s ease;
+}
+
+/* CORRIGIDO: darkTheme agora fica no próprio <footer>, por isso é seletor composto (sem espaço) */
+.footer.darkTheme {
+  border-top-color: #334155;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footerText {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* NOVO */
+.darkTheme .footerText {
+  color: #94a3b8;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.footerLinks a {
+  color: #64748b;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+/* NOVO */
+.darkTheme .footerLinks a {
+  color: #94a3b8;
+}
+
+.footerLinks a:hover {
+  color: #3b82f6;
+}
+
+/* NOVO: azul um pouco mais claro no escuro, mesmo padrão usado no resto do app */
+.darkTheme .footerLinks a:hover {
+  color: #60a5fa;
+}
